@@ -29,9 +29,17 @@ const sess = {
 
     const hdbrs = xphbs.create({ helpers });
 
-    app.engine(express.json());
+    app.engine('handlebars', hdbrs.engine);
     app.set('view engine', 'handlebars');
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
-    
+    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(require('./controllers/'));
+
+    app.listen(PORT, () => {
+        console.log(`listening on port ${PORT}!`);
+        sequelize.sync({ force: false });
+    });
+
+
 
