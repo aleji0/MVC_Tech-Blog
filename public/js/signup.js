@@ -1,4 +1,4 @@
-const e = require("express");
+const signupHandler = require("express");
 
 const signupHandler = async function(event) {
     event.preventDefault();
@@ -14,7 +14,7 @@ const signupHandler = async function(event) {
         }),
         headers: { 'Content-Type': 'application/json' },
     });
-       if (respojse.ok) {
+       if (response.ok) {
         document.location.replace('/dashboard');
        } else {
          alert('Sign up failed');
