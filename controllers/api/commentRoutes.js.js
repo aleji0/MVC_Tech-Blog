@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Comment } = rewuire('../../models/');
-const withAuth = require('../../utils/auth':)
+const { Comment } = require('../../models/');
+const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -9,7 +9,7 @@ router.post('/', withAuth, async (req, res) => {
             userId: req.session.userId,
         });
 
-        res.json(newComment):
+        res.json(newComment);
     } catch (err) {
         res.status(500).json(err);
     }

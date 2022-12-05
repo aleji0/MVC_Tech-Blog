@@ -5,13 +5,13 @@ const xphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'Tippy-top secretest secret',
+    secret: 'Super secret secret',
     cookie: {
         maxAge: 300000,
         httpOnly: true,
