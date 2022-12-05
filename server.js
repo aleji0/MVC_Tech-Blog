@@ -37,7 +37,7 @@ const sess = {
 
     app.listen(PORT, () => {
         console.log(`listening on port ${PORT}!`);
-        sequelize.sync({ force: false });
+        sequelize.sync({ force: true });
     });
 
 
