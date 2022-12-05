@@ -13,4 +13,4 @@ Post.init(
     }
 );
 
-modeul.exports = Post;
+module.exports = Post;
